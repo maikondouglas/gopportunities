@@ -21,6 +21,21 @@ definitions:
       message:
         type: string
     type: object
+  handler.UpdateOpeningRequest:
+    properties:
+      company:
+        type: string
+      link:
+        type: string
+      location:
+        type: string
+      remote:
+        type: boolean
+      role:
+        type: string
+      salary:
+        type: integer
+    type: object
 info:
   contact: {}
 paths:
@@ -57,6 +72,33 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/handler.CreateOpeningRequest'
+      responses:
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorReponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.ErrorReponse'
+      tags:
+      - Openings
+    put:
+      consumes:
+      - application/json
+      description: Update a new job opening
+      parameters:
+      - description: Opening indentification
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: Opening data to Update
+        in: body
+        name: opening
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdateOpeningRequest'
       responses:
         "400":
           description: Bad Request
