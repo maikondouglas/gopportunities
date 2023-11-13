@@ -15,7 +15,7 @@ import (
 // @Accept json
 // @Peoduce json
 // @Param id query string true "Opening indentification"
-// @Sucess 202 {object} DeleteOpeningResponse
+// @Sucess 200 {object} DeleteOpeningResponse
 // @Failure 400 {object} ErrorReponse
 // @Failure 404 {object} ErrorReponse
 // @Router /opening [delete]
