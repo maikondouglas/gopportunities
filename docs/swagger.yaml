@@ -68,4 +68,26 @@ paths:
             $ref: '#/definitions/handler.ErrorReponse'
       tags:
       - Openings
+  /opening/:id:
+    get:
+      consumes:
+      - application/json
+      description: Show a job opening
+      parameters:
+      - description: Opening indentification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorReponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ErrorReponse'
+      tags:
+      - Openings
 swagger: "2.0"

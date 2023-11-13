@@ -8,6 +8,17 @@ import (
 	"github.com/maikondouglas/gopportunities/schemas"
 )
 
+// @BasePath /api/v1/
+// @Sumary Show opening
+// @Description Show a job opening
+// @Tags Openings
+// @Accept json
+// @Peoduce json
+// @Param id query string true "Opening indentification"
+// @Sucess 200 {object} ShowOpeningResponse
+// @Failure 400 {object} ErrorReponse
+// @Failure 404 {object} ErrorReponse
+// @Router /opening/:id [get]
 func ShowOpeningHandler(context *gin.Context) {
 	id := context.Param("id")
 

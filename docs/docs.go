@@ -82,6 +82,40 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/opening/:id": {
+            "get": {
+                "description": "Show a job opening",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Openings"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Opening indentification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorReponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorReponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
