@@ -7,6 +7,18 @@ import (
 	"github.com/maikondouglas/gopportunities/schemas"
 )
 
+// @BasePath /api/v1/
+// @Sumary Create opening
+// @Description Create a new job opening
+// @Tags Openings
+// @Accept json
+// @Peoduce json
+// @Param request body CreateOpeningRequest true "Request body"
+// @Sucess 200 {object} CreateOpeningResponse
+// @Failure 400 {object} ErrorReponse
+// @Failure 500 {object} ErrorReponse
+// @Router /opening [post]
+
 func CreateOpeningHandler(context *gin.Context) {
 	request := CreateOpeningRequest{}
 
