@@ -116,6 +116,31 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/openings": {
+            "get": {
+                "description": "List all jobs openings",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Openings"
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorReponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorReponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {

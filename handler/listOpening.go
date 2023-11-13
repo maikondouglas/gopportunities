@@ -7,6 +7,16 @@ import (
 	"github.com/maikondouglas/gopportunities/schemas"
 )
 
+// @BasePath /api/v1/
+// @Sumary List openings
+// @Description List all jobs openings
+// @Tags Openings
+// @Accept json
+// @Peoduce json
+// @Sucess 200 {object} ListOpeningResponse
+// @Failure 400 {object} ErrorReponse
+// @Failure 404 {object} ErrorReponse
+// @Router /openings [get]
 func ListOpeningsHandler(context *gin.Context) {
 	openings := []schemas.Opening{}
 
