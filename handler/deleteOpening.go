@@ -8,6 +8,17 @@ import (
 	"github.com/maikondouglas/gopportunities/schemas"
 )
 
+// @BasePath /api/v1/
+// @Sumary Delete opening
+// @Description Delete a new job opening
+// @Tags Openings
+// @Accept json
+// @Peoduce json
+// @Param id query string true "Opening indentification"
+// @Sucess 202 {object} DeleteOpeningResponse
+// @Failure 400 {object} ErrorReponse
+// @Failure 404 {object} ErrorReponse
+// @Router /opening [delete]
 func DeleteOpeningHandler(context *gin.Context) {
 	id := context.Query("id")
 	if id == "" {
